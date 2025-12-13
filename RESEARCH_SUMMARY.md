@@ -14,8 +14,9 @@
 | Aspect | Status | Notes |
 |--------|--------|-------|
 | **License** | ✅ GPL-3.0 | Compliant with upstream GPL-2.0 |
-| **Upstream Status** | ⚠️ Dormant | Last update: Oct 2021 (3+ years) |
-| **Code Divergence** | 🔄 Substantial | 2.5x growth, complete refactor |
+| **Original Upstream** | ⚠️ Dormant | datawiza-inc: Oct 2021 (4+ years) |
+| **Intermediate Fork** | ✅ Active | andrewheberle: March 2025 |
+| **Code Divergence** | 🔄 Substantial | 2.5x growth from original |
 | **Build System** | ✅ Excellent | CI/CD, WordPress.org deployment |
 | **Cloudflare Support** | ✅ Ready | Already compatible, can enhance |
 
@@ -23,20 +24,27 @@
 
 ### Should we hard fork? ✅ YES
 
-- [x] Upstream is dormant (3+ years inactive)
-- [x] Substantial code divergence (2.5x size)
+- [x] Original upstream (datawiza-inc) is dormant (4+ years inactive)
+- [x] Substantial code divergence from original (2.5x size)
 - [x] Different purpose (generic vs vendor-specific)
 - [x] Superior infrastructure (CI/CD, WordPress.org)
 - [x] Legal compliance (GPL-3.0 compatible)
-- [x] Active maintenance required
+- [x] Cloudflare-specific focus justifies independent path
 
-### Should we submit upstream? ❌ NO
+### Should we submit to datawiza-inc upstream? ❌ NO
 
-- [x] Upstream appears unmaintained
-- [x] Different target audience and use case
+- [x] Original upstream (datawiza-inc) appears unmaintained since 2021
+- [x] Vendor-specific focus incompatible with generic approach
 - [x] Changes too substantial for upstream
 - [x] No benefit to submitting
 - [x] Fork already has independent user base
+
+### Should we merge with andrewheberle fork? 🤔 OPTIONAL
+
+- [x] andrewheberle fork is actively maintained (March 2025)
+- [x] Both forks serve similar purposes (generic JWT auth)
+- [x] Could collaborate on generic features
+- [ ] But Cloudflare-specific work should remain independent
 
 ## Three Key Documents
 
@@ -112,21 +120,21 @@ Future improvements for Cloudflare Access:
    - Pre-configured JWKS URLs
    - Template policies
 
-## Comparison: Upstream vs Current Fork
+## Comparison: Fork Evolution
 
-| Feature | Upstream (datawiza) | Current Fork (ah-jwt-auth) |
-|---------|---------------------|----------------------------|
-| Purpose | Datawiza-specific | Generic JWT auth |
-| Status | Dormant (2021) | Active |
-| License | GPL-2.0 | GPL-3.0 |
-| Code Size | ~231 lines | ~569 lines |
-| Headers | Hardcoded `DW-TOKEN` | Configurable |
-| Algorithms | HS256 only | HS256 + RS256 |
-| JWKS | Not supported | Full support |
-| WordPress.org | No | Yes |
-| CI/CD | No | Yes |
-| Cloudflare | Not mentioned | Documented support |
-| Maintenance | None | Active |
+| Feature | Original (datawiza) | Intermediate (andrewheberle) | Current (blavity) |
+|---------|---------------------|------------------------------|-------------------|
+| Status | Dormant (2021) | Active (2025) | Active |
+| Purpose | Datawiza-specific | Generic JWT auth | Generic + Cloudflare focus |
+| License | GPL-2.0 | GPL-3.0 | GPL-3.0 |
+| Code Size | ~231 lines | ~569 lines | ~569 lines |
+| Headers | Hardcoded `DW-TOKEN` | Configurable | Configurable |
+| Algorithms | HS256 only | HS256 + RS256 | HS256 + RS256 |
+| JWKS | Not supported | Full support | Full support |
+| WordPress.org | No | Yes | Yes |
+| CI/CD | No | Yes | Yes |
+| Cloudflare Docs | Not mentioned | Supported | Documented + focused |
+| Last Update | Oct 2021 | Mar 2025 | Current |
 
 ## Action Items for Cloudflare Focus
 
@@ -244,8 +252,9 @@ The analysis strongly supports maintaining the hard fork:
 1. **Legal**: GPL-3.0 compliant, no issues
 2. **Technical**: Superior architecture and infrastructure
 3. **Strategic**: Better alignment with Cloudflare Access goals
-4. **Practical**: Upstream is dormant, submission pointless
+4. **Practical**: Original upstream (datawiza-inc) is dormant; intermediate fork (andrewheberle) is active but serves different priorities
 5. **Risk**: Low risk, high benefit
+6. **Note**: While andrewheberle fork remains active, blavity's Cloudflare-specific focus justifies independent development
 
 ### Next Steps
 

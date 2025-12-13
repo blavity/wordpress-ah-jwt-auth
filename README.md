@@ -77,7 +77,8 @@ This plugin works with any reverse proxy or Identity-Aware Proxy that can inject
 
 ## Credits
 
-This plugin is based on code originally from [datawiza-inc/wordpress-proxy-auth-plugin](https://github.com/datawiza-inc/wordpress-proxy-auth-plugin), significantly refactored and enhanced with:
+This plugin is based on code originally from [datawiza-inc/wordpress-proxy-auth-plugin](https://github.com/datawiza-inc/wordpress-proxy-auth-plugin), forked and significantly enhanced by [Andrew Heberle](https://github.com/andrewheberle/wordpress-ah-jwt-auth), with continued development by Blavity:
+
 - Generic multi-provider support
 - JWKS (JSON Web Key Set) integration
 - RS256 algorithm support
@@ -85,13 +86,17 @@ This plugin is based on code originally from [datawiza-inc/wordpress-proxy-auth-
 - WordPress.org deployment infrastructure
 - Enhanced security and error handling
 
-**Original Author**: [Andrew Heberle](https://github.com/andrewheberle/wordpress-ah-jwt-auth)  
+**Fork Chain**:
+1. Original: datawiza-inc/wordpress-proxy-auth-plugin (dormant since Oct 2021)
+2. Intermediate: andrewheberle/wordpress-ah-jwt-auth (active through Mar 2025)
+3. Current: blavity/wordpress-ah-jwt-auth (Cloudflare Access focus)
+
 **License**: GPL-3.0
 
 ## Project Status
 
-This is a **hard fork** maintained independently from the original upstream project. The original datawiza-inc project was last updated in October 2021 and was focused on a specific vendor solution. This fork has evolved substantially with a focus on:
-- Generic JWT authentication for any provider
-- Enhanced Cloudflare Access support
-- Active maintenance and security updates
-- WordPress.org plugin directory presence
+This is a **hard fork** maintained independently with a focus on Cloudflare Access integration:
+- Original datawiza-inc project (2020-2021): Vendor-specific, dormant since October 2021
+- Andrew Heberle's fork (2021-2025): Active generic JWT authentication plugin
+- Current Blavity fork: Continuing development with enhanced Cloudflare Access support
+- WordPress.org plugin directory presence maintained

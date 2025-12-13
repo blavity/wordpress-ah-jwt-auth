@@ -35,18 +35,34 @@ The current fork's GPL-3.0 license is fully compatible with the upstream GPL-2.0
 
 ## 2. Fork Relationship Analysis
 
-### 2.1 Upstream Project Status
-- **Repository**: datawiza-inc/wordpress-proxy-auth-plugin
-- **Last Update**: October 2021 (3+ years ago)
-- **Activity**: Appears to be dormant/unmaintained
-- **Purpose**: Vendor-specific plugin for Datawiza Access Broker
+### 2.1 Fork Chain and Timeline
 
-### 2.2 Current Fork Characteristics
-- **Repository**: blavity/wordpress-ah-jwt-auth (forked from andrewheberle/wordpress-ah-jwt-auth)
-- **Original Author**: Andrew Heberle
-- **Current Maintainer**: Blavity
-- **Status**: Active with recent updates
-- **Purpose**: Generic JWT authentication plugin with Cloudflare Access support
+The fork relationship is as follows:
+
+1. **datawiza-inc/wordpress-proxy-auth-plugin** (Original Upstream)
+   - **Created**: December 2020
+   - **Last Update**: October 2021 (4+ years ago)
+   - **Status**: Dormant/unmaintained
+   - **Purpose**: Vendor-specific plugin for Datawiza Access Broker
+
+2. **andrewheberle/wordpress-ah-jwt-auth** (Intermediate Fork)
+   - **Forked From**: datawiza-inc/wordpress-proxy-auth-plugin
+   - **Created**: April 2021
+   - **Last Update**: March 2025 (actively maintained)
+   - **Author**: Andrew Heberle
+   - **Purpose**: Generic JWT authentication plugin with enhanced features
+
+3. **blavity/wordpress-ah-jwt-auth** (Current Repository)
+   - **Forked From**: andrewheberle/wordpress-ah-jwt-auth
+   - **Current Maintainer**: Blavity
+   - **Status**: Active development
+   - **Purpose**: Continuing generic JWT authentication with Cloudflare Access focus
+
+### 2.2 Key Observations
+
+- **Original upstream (datawiza-inc)** has been dormant since October 2021
+- **Intermediate fork (andrewheberle)** remains actively maintained through 2025
+- **Current fork (blavity)** is building on andrewheberle's work, not directly on datawiza-inc
 
 ### 2.3 Key Differences from Upstream
 
@@ -171,13 +187,18 @@ The current fork already supports Cloudflare Access integration:
 
 #### Rationale
 
-1. **Upstream is Dormant**
-   - No activity since October 2021 (3+ years)
+1. **Original Upstream (datawiza-inc) is Dormant**
+   - No activity since October 2021 (4+ years)
    - Vendor-specific focus (Datawiza)
    - No indication of accepting generic contributions
 
-2. **Substantial Divergence**
-   - 2.5x code growth
+2. **Intermediate Fork (andrewheberle) is Active but Different Path**
+   - While andrewheberle's repo is actively maintained (last update March 2025)
+   - Both blavity and andrewheberle repos have diverged from datawiza-inc
+   - Blavity fork can pursue Cloudflare-specific enhancements independently
+
+3. **Substantial Divergence from Original**
+   - 2.5x code growth from original datawiza-inc
    - Complete architectural changes
    - Different target audience
    - Independent feature roadmap
@@ -231,15 +252,20 @@ The current fork already supports Cloudflare Access integration:
 
 ### 5.3 Upstream Contribution Strategy
 
-**Limited Selective Contributions**
+**Regarding datawiza-inc (Original Upstream)**
+Given 4+ years of inactivity, contributions to datawiza-inc are **not recommended**.
 
-If specific bug fixes or improvements could benefit the upstream (if it becomes active):
-1. Check for upstream activity
-2. Submit isolated, backward-compatible patches
-3. Don't expect acceptance or merge
-4. Maintain fixes in current fork regardless
+**Regarding andrewheberle (Intermediate Fork)**
+Andrew Heberle's fork remains actively maintained (last update March 2025). Considerations:
+- Both repos (blavity and andrewheberle) have evolved independently
+- Collaboration could be considered for generic JWT features
+- However, Cloudflare-specific features should remain in blavity fork
+- No obligation to contribute back given the fork's independent direction
 
-**However**: Given 3+ years of inactivity, upstream contributions are **not recommended** as a primary strategy.
+**Recommendation**: 
+- Maintain independent development for Cloudflare Access features
+- Consider collaboration with andrewheberle only for generic JWT improvements that benefit both forks
+- No action required toward dormant datawiza-inc upstream
 
 ## 6. Build System Recommendations
 
