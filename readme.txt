@@ -3,9 +3,9 @@ Contributors: andrewheberle
 Donate link: https://paypal.me/andrewheberle
 Tags: jwt, sso, login, auth, authentication
 Requires at least: 4.7
-Tested up to: 6.7.2
+Tested up to: 6.9
 Stable tag: 1.5.4
-Requires PHP: 7.0
+Requires PHP: 8.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 

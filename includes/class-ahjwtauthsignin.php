@@ -26,6 +26,27 @@ use Firebase\JWT\Key;
  */
 class AhJwtAuthSignIn {
 	/**
+	 * Error message to be displayed
+	 *
+	 * @var string
+	 */
+	private $error;
+
+	/**
+	 * Warning message to be displayed
+	 *
+	 * @var string
+	 */
+	private $warning;
+
+	/**
+	 * Admin class instance
+	 *
+	 * @var AhJwtAuthAdmin
+	 */
+	private $ah_jwt_auth_admin;
+
+	/**
 	 * Sets up the class ready for use
 	 *
 	 * @return void
