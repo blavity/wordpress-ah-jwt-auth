@@ -68,9 +68,12 @@ This plugin works with any reverse proxy or Identity-Aware Proxy that can inject
 
 ## Documentation
 
-- **[Cloudflare Access Setup Guide](CLOUDFLARE_ACCESS_SETUP.md)** - Complete setup instructions for Cloudflare Access
-- **[Research Summary](RESEARCH_SUMMARY.md)** - Quick reference for licensing and build system decisions
-- **[Fork Research](FORK_RESEARCH.md)** - Comprehensive analysis of fork relationship, licensing, and recommendations
+📚 **Setup and Configuration:**
+- **[Cloudflare Access Setup Guide](CLOUDFLARE_ACCESS_SETUP.md)** - Complete setup instructions for Cloudflare Access with troubleshooting and security best practices
+
+📊 **Project Research and Decisions:**
+- **[Research Summary](RESEARCH_SUMMARY.md)** - TL;DR executive summary of licensing analysis, build system evaluation, and fork decision
+- **[Fork Research](FORK_RESEARCH.md)** - Comprehensive analysis of fork relationship, GPL licensing compliance, and recommendations
 
 ## Credits
 
@@ -92,8 +95,3 @@ This is a **hard fork** maintained independently from the original upstream proj
 - Enhanced Cloudflare Access support
 - Active maintenance and security updates
 - WordPress.org plugin directory presence
-
-### Documentation
-- **[RESEARCH_SUMMARY.md](RESEARCH_SUMMARY.md)** - TL;DR executive summary of licensing and build system analysis
-- **[FORK_RESEARCH.md](FORK_RESEARCH.md)** - Comprehensive analysis and recommendations
-- **[CLOUDFLARE_ACCESS_SETUP.md](CLOUDFLARE_ACCESS_SETUP.md)** - Step-by-step Cloudflare Access integration guide

@@ -40,9 +40,9 @@
 
 ## Three Key Documents
 
-1. **[FORK_RESEARCH.md](FORK_RESEARCH.md)** - Full analysis (licensing, build system, recommendations)
-2. **[CLOUDFLARE_ACCESS_SETUP.md](CLOUDFLARE_ACCESS_SETUP.md)** - Complete setup guide for Cloudflare Access
-3. **[README.md](README.md)** - Updated with Cloudflare focus and fork clarification
+1. **[FORK_RESEARCH.md](FORK_RESEARCH.md)** - Comprehensive analysis covering licensing compatibility (GPL-2.0 → GPL-3.0), upstream project comparison, build system evaluation, and detailed recommendations with legal compliance checklist
+2. **[CLOUDFLARE_ACCESS_SETUP.md](CLOUDFLARE_ACCESS_SETUP.md)** - Production-ready setup guide with step-by-step Cloudflare Access configuration, troubleshooting, security best practices, and advanced features like role mapping
+3. **[README.md](README.md)** - Updated project overview emphasizing Cloudflare Access support, installation instructions, and quick-start documentation
 
 ## License Compliance ✅
 

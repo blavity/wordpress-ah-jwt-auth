@@ -83,7 +83,7 @@ Navigate to WordPress Admin → **Settings** → **AH JWT Auth**
 ```
 Cf-Access-Jwt-Assertion
 ```
-⚠️ **Important**: Use exact capitalization as shown above.
+⚠️ **Important**: Use exact capitalization as shown above. HTTP headers in Cloudflare Access are case-sensitive for security reasons. Using incorrect capitalization (e.g., `cf-access-jwt-assertion` or `CF-ACCESS-JWT-ASSERTION`) will cause authentication to fail silently, as the plugin won't find the JWT in the expected header.
 
 **Algorithm:**
 ```
@@ -200,28 +200,51 @@ async function handleRequest(request) {
   const jwt = request.headers.get('Cf-Access-Jwt-Assertion')
   
   if (jwt) {
-    // Decode JWT (simplified - use proper JWT library)
-    const payload = JSON.parse(atob(jwt.split('.')[1]))
-    
-    // Map groups to WordPress roles
-    let role = 'subscriber' // default
-    
-    if (payload.groups && payload.groups.includes('wordpress-admins')) {
-      role = 'administrator'
-    } else if (payload.groups && payload.groups.includes('wordpress-editors')) {
-      role = 'editor'
+    // Validate JWT structure
+    const parts = jwt.split('.')
+    if (parts.length !== 3) {
+      return new Response('Invalid JWT format', { status: 401 })
     }
     
-    // Add role to JWT payload
-    payload.role = role
-    
-    // Re-sign JWT (requires proper implementation)
-    // This is a simplified example
+    try {
+      // Decode JWT payload (base64url decode)
+      const payload = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')))
+      
+      // Map groups to WordPress roles
+      let role = 'subscriber' // default
+      
+      if (payload.groups && Array.isArray(payload.groups)) {
+        if (payload.groups.includes('wordpress-admins')) {
+          role = 'administrator'
+        } else if (payload.groups.includes('wordpress-editors')) {
+          role = 'editor'
+        }
+      }
+      
+      // Note: This example shows concept only
+      // In production, you would need to:
+      // 1. Properly verify the JWT signature
+      // 2. Re-sign the JWT with the modified payload
+      // 3. Handle errors appropriately
+      // 4. Use a proper JWT library like jose
+      
+      // For production, consider using Cloudflare Access custom claims instead
+      
+    } catch (e) {
+      console.error('JWT parsing error:', e)
+      return new Response('Invalid JWT', { status: 401 })
+    }
   }
   
   return fetch(request)
 }
 ```
+
+**⚠️ Important**: This is a simplified example for illustration. In production:
+- Use a proper JWT library (e.g., `jose` npm package)
+- Properly verify JWT signatures before modification
+- Handle all error cases
+- Consider using Cloudflare Access custom claims instead of modifying JWTs
 
 ### 4.2 Service Tokens
 

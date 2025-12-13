@@ -259,7 +259,8 @@ The existing build system is well-architected:
 - PHPUnit tests for core functionality
 - Integration tests for JWT validation
 - WordPress version compatibility tests
-- PHP version compatibility matrix (7.0-8.3)
+- PHP version compatibility matrix (7.4-8.3)
+  Note: PHP 7.0-7.3 are EOL; recommend PHP 7.4+ per WordPress requirements
 ```
 
 #### Security Scanning
