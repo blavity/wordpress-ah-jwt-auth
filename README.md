@@ -62,9 +62,15 @@ This plugin works with any reverse proxy or Identity-Aware Proxy that can inject
 2. Activate the plugin
 3. Go to Settings → AH JWT Auth
 4. Configure your JWT settings:
-   - **For Cloudflare Access**: Set header to `Cf-Access-Jwt-Assertion` and configure your JWKS URL
+   - **For Cloudflare Access**: See **[Cloudflare Access Setup Guide](CLOUDFLARE_ACCESS_SETUP.md)** for step-by-step instructions
    - **For shared secret**: Enter your HS256 secret key
    - Set default user role and other preferences
+
+## Documentation
+
+- **[Cloudflare Access Setup Guide](CLOUDFLARE_ACCESS_SETUP.md)** - Complete setup instructions for Cloudflare Access
+- **[Research Summary](RESEARCH_SUMMARY.md)** - Quick reference for licensing and build system decisions
+- **[Fork Research](FORK_RESEARCH.md)** - Comprehensive analysis of fork relationship, licensing, and recommendations
 
 ## Credits
 
@@ -87,4 +93,7 @@ This is a **hard fork** maintained independently from the original upstream proj
 - Active maintenance and security updates
 - WordPress.org plugin directory presence
 
-For detailed information about the fork relationship, licensing, and build system, see [FORK_RESEARCH.md](FORK_RESEARCH.md).
+### Documentation
+- **[RESEARCH_SUMMARY.md](RESEARCH_SUMMARY.md)** - TL;DR executive summary of licensing and build system analysis
+- **[FORK_RESEARCH.md](FORK_RESEARCH.md)** - Comprehensive analysis and recommendations
+- **[CLOUDFLARE_ACCESS_SETUP.md](CLOUDFLARE_ACCESS_SETUP.md)** - Step-by-step Cloudflare Access integration guide
